@@ -14,7 +14,7 @@
 > 2. 客户端（lecloud-rest-api \ lecloud-feign-client）  
 > 3. 服务网关（lecloud-api-gateway）  
 
-
+``` 
 Maven 使用阿里云的 jar 仓库:
     <mirror>
         <id>nexus-aliyun</id>
@@ -22,7 +22,7 @@ Maven 使用阿里云的 jar 仓库:
         <name>Nexus aliyun</name>
         <url>http://maven.aliyun.com/nexus/content/groups/public</url>
     </mirror>
-    
+``` 
 项目启动：
 mvn spring-boot:run
 
