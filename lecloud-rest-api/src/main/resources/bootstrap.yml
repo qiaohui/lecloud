@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: rest-api
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  

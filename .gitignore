@@ -1,0 +1,37 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Generated files
+bin/
+gen/
+
+# Intellij
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/dictionaries
+.idea/libraries
+
+# Gradle files
+.gradle/
+build/
+
+target/
+.settings/
+.idea/
+.project
+.classpath
+.DS_Store
+*~/.m2/*
