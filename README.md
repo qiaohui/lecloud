@@ -6,7 +6,8 @@
 |[lecloud-rest-api](lecloud-rest-api/README.md)|数据库增删改查<br>涉及Eureka Client、Spring Data JPA、Spring Data REST、H2、the HAL Browser等|  
 |[lecloud-feign-client](lecloud-feign-client/README.md)|Eureka客户端，集成了Feign、Hystrix等|  
 |[lecloud-api-gateway](lecloud-api-gateway/README.md)|Zuul服务网关|  
-|[lecloud-monitor-server](lecloud-monitor-server/README.md)|监控基于Spring Boot的应用|  
+|[lecloud-monitor-server](lecloud-monitor-server/README.md)|监控基于Spring Boot的应用| 
+|[lecloud-swagger2-apiInfo](lecloud-swagger2-apiInfo/README.md)|Swagger2 api info|  
 |...|...|  
 
 > 启动顺序：  
