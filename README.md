@@ -12,7 +12,7 @@
 
 > 启动顺序：  
 > 1. 服务端（lecloud-eureka-server \ lecloud-monitor-server）  
-> 2. 客户端（lecloud-rest-api \ lecloud-feign-client）  
+> 2. 客户端（lecloud-rest-api \ lecloud-feign-client \ lecloud-swagger2-apiInfos）  
 > 3. 服务网关（lecloud-api-gateway）  
 
 ``` 
