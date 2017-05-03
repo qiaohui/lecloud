@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: swagger2-apiInfo
+
+server:
+  port: 8085
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
