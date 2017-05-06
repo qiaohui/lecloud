@@ -3,6 +3,8 @@ package com.lecloud.eureka.client.feign.controller;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +22,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 @Consumes(MediaType.APPLICATION_JSON_VALUE)
 @RequestMapping("/user-feign/")
 public class UserController {
+
+    private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserServiceFeignClient userServiceFeignClient;

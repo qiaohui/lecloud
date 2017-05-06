@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.lecloud</groupId>
 		<artifactId>lecloud-parent</artifactId>
-	    <version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>lecloud-api-gateway</artifactId>
 
@@ -16,7 +16,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
-		
+
 		<!-- zuul -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
