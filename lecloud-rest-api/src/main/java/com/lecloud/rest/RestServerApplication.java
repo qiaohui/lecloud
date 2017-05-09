@@ -1,11 +1,9 @@
 package com.lecloud.rest;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.data.redis.core.RedisTemplate;
 
 /**
  * 通过 EnableDiscoveryClient注解 或 EnableEurekaClient注解，都可启用Eureka客户端用以注册与发现服务，
@@ -14,22 +12,13 @@ import org.springframework.data.redis.core.RedisTemplate;
  * @author qiaohui
  *
  */
+@EnableCaching
 @EnableDiscoveryClient
 @SpringBootApplication
-public class RestServerApplication implements CommandLineRunner {
-
-    @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+public class RestServerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(RestServerApplication.class, args);
     }
 
-    @Override
-    public void run(String... arg0) throws Exception {
-        redisTemplate.opsForValue().set("key1", "value1");
-        System.out.println("------");
-        System.out.println(redisTemplate.opsForValue().get("key1"));
-        System.out.println("------");
-    }
 }
