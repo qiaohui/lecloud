@@ -6,9 +6,18 @@ server:
   port: 8888
  
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+# 建议使用serviceId，更换 ip 不影响服务      
+zuul:
+  routes:
+    feign-client:
+      path: /**
+      stripPrefix: true
 
 # 设置默认超时时间60s（default为全局；若设置某项服务的超时时间，只需要将default替换为对应的服务名）
 hystrix:
@@ -16,8 +25,12 @@ hystrix:
     default:
       execution:
         isolation:
+          strategy: THREAD
           thread:
             timeoutInMilliseconds: 60000
+  threadpool:
+    default:
+      coreSize: 50
 
 logging:
   level:

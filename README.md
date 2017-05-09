@@ -9,10 +9,16 @@
 |[lecloud-monitor-server](lecloud-monitor-server/README.md)|监控基于eureka的应用| 
 |...|...|  
 
+> 依赖
+> Maven 3
+> Java 8
+
+
 > 启动顺序：  
 > 1. 服务端（lecloud-eureka-server \ lecloud-monitor-server）  
 > 2. 客户端（lecloud-rest-api \ lecloud-feign-client ）  
 > 3. 服务网关（lecloud-api-gateway）  
+
 
 > 项目启动：
 > mvn spring-boot:run
