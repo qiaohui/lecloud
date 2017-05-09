@@ -15,6 +15,10 @@ import com.lecloud.eureka.client.feign.service.user.UserServiceRestClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(description = "测试 rest 方式请求")
 @RestController
 @Produces(MediaType.APPLICATION_JSON_VALUE)
 @Consumes(MediaType.APPLICATION_JSON_VALUE)
@@ -23,6 +27,7 @@ public class UserRestController {
     @Autowired
     private UserServiceRestClient userServiceRestClient;
 
+    @ApiOperation(value = "通过 rest 方式根据 id 获取用户")
     @HystrixCommand(commandProperties = {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000"),
             @HystrixProperty(name = "execution.timeout.enabled", value = "false") })

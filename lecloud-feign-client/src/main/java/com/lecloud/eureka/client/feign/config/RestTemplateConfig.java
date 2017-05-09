@@ -7,8 +7,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * 
+ * @author qiaohui
+ *
+ */
 @Configuration
-public class Config {
+public class RestTemplateConfig {
 
     @Autowired
     private RestTemplateBuilder builder;

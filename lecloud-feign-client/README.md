@@ -1,4 +1,4 @@
-演示Feign、Hystrix的Eureka客户端。  
+演示Feign、Hystrix、Swagger2的Eureka客户端。  
 
 _FeignClient方式调用接口_  
 http://localhost:8084/user-feign/1                      |根据ID获取User [db-rest]|  
@@ -13,3 +13,7 @@ http://localhost:8084/user-rest/1                       |根据ID获取User [db-
 _Hystrix Dashboard监控_     
 http://localhost:8084/hystrix                           |查看仪表盘|  
 http://localhost:8084/hystrix.stream                    |在仪表盘中查看监控|  
+
+
+_Swagger2 接口文档
+http://localhost:8084/swagger-ui.html

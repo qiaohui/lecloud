@@ -15,7 +15,6 @@
 		<module>lecloud-feign-client</module>
 		<module>lecloud-api-gateway</module>
 		<module>lecloud-monitor-server</module>
-		<module>lecloud-swagger2-apiInfo</module>
 	</modules>
 
 	<properties>

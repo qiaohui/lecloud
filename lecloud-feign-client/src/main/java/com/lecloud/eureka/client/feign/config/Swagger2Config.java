@@ -1,4 +1,4 @@
-package com.lecloud.swagger2.apiInfo.config;
+package com.lecloud.eureka.client.feign.config;
 
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
@@ -33,7 +33,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2).groupName("group1") // 创建API基本信息
                 .apiInfo(apiInfo()) // 创建API基本信息
                 .select() // 控制要暴露的接口
-                .apis(RequestHandlerSelectors.basePackage("com.lecloud.swagger2.apiInfo.controller")) // 通过指定扫描包暴露接口
+                .apis(RequestHandlerSelectors.basePackage("com.lecloud.eureka.client.feign.controller")) // 通过指定扫描包暴露接口
                 .paths(PathSelectors.any()) // 设置过滤规则暴露接口
                 .build();
     }
