@@ -32,6 +32,7 @@ public class UserController {
             @HystrixProperty(name = "execution.timeout.enabled", value = "false") })
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable int id) {
+        logger.info("user-feign/getUser request");
         return userServiceFeignClient.getUser(id);
     }
 
@@ -41,6 +42,7 @@ public class UserController {
             @HystrixProperty(name = "execution.timeout.enabled", value = "false") })
     @RequestMapping(value = "getUserByName/{name}", method = RequestMethod.GET)
     public User getUserByName(@PathVariable String name) {
+        logger.info("user-feign/getUserByName request");
         return userServiceFeignClient.findUserByName(name);
     }
 
