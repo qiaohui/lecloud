@@ -1,6 +1,8 @@
 spring:
   application:
     name: rest-api
+  zipkin:
+    base-url: http://localhost:9001
 
 server:
   port: 8082

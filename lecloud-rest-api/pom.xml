@@ -27,6 +27,12 @@
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 
+		<!-- zipkin -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+
 		<!-- h2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
