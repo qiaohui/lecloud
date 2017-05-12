@@ -15,5 +15,8 @@ http://localhost:8084/hystrix                           |查看仪表盘|
 http://localhost:8084/hystrix.stream                    |在仪表盘中查看监控|  
 
 
+有很多个服务的时候，可以考虑使用Hystrix Turbine将多个Hystrix Dashboard数据进行整合，也非常简单。
+
+
 _Swagger2 接口文档_
 http://localhost:8084/swagger-ui.html
