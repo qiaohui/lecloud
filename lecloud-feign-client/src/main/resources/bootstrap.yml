@@ -6,8 +6,6 @@ spring:
 
 server:
   port: 8084
-  
- 
 
 eureka:
   instance:

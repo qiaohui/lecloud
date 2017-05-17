@@ -14,8 +14,10 @@
 		<module>lecloud-rest-api</module>
 		<module>lecloud-feign-client</module>
 		<module>lecloud-api-gateway</module>
+		
 		<module>lecloud-monitor-server</module>
 		<module>lecloud-zipkin-server</module>
+		<module>lecloud-hystrix-turbine</module>
 	</modules>
 
 	<properties>
