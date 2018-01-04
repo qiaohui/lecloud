@@ -1,5 +1,7 @@
 package com.lecloud.eureka.client.feign.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lecloud.eureka.client.feign.entity.User;
 import com.lecloud.eureka.client.feign.service.user.UserServiceFeignClient;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCollapser;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
@@ -26,14 +29,25 @@ public class UserController {
     @Autowired
     private UserServiceFeignClient userServiceFeignClient;
 
+    /**
+     * @HystrixCollapser注解为其创建了合并请求器，通过 batchMethod属性指定了批量请求的实现方法为 getUsers 方法.
+     *                                  同时通过collapserProperties属性为合并请求器设置相关属性，
+     *                                  这里使用timerDelayInMilliseconds将合并时间窗设置为100毫秒。
+     * @param id
+     * @return
+     */
     @ApiOperation(value = "根据 id 获取单个用户信息")
-    @HystrixCommand(commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000"),
-            @HystrixProperty(name = "execution.timeout.enabled", value = "false") })
+    @HystrixCollapser(batchMethod = "getUsers", collapserProperties = {
+            @HystrixProperty(name = "timerDelayInMilliseconds", value = "100") })
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable int id) {
         logger.info("user-feign/getUser request");
         return userServiceFeignClient.getUser(id);
+    }
+
+    @HystrixCommand
+    public List<User> getUsers(@PathVariable String ids) {
+        return userServiceFeignClient.getUsers(ids);
     }
 
     @ApiOperation(value = "根据 name 获取单个用户信息")

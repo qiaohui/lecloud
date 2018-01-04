@@ -1,5 +1,7 @@
 package com.lecloud.eureka.client.feign.service.user;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.lecloud.eureka.client.feign.entity.User;
@@ -20,5 +22,10 @@ public class UserServiceFeignClientFallback implements UserServiceFeignClient {
     @Override
     public String findUserByAddress(String address) {
         return "fallback";
+    }
+
+    @Override
+    public List<User> getUsers(String ids) {
+        return null;
     }
 }
