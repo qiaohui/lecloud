@@ -12,7 +12,7 @@
 	<artifactId>lecloud-monitor-server</artifactId>
 
 	<properties>
-		<spring.boot.admin.server>1.5.0</spring.boot.admin.server>
+		<spring.boot.admin.server>1.5.6</spring.boot.admin.server>
 	</properties>
 
 	<dependencies>

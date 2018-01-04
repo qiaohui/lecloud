@@ -11,7 +11,7 @@
 	<artifactId>lecloud-feign-client</artifactId>
 	
 	<properties>
-        <swagger2.version>2.6.1</swagger2.version>
+        <swagger2.version>2.6.0</swagger2.version>
     </properties>
 
 	<dependencies>
